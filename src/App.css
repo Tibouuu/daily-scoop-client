@@ -5,14 +5,16 @@
 body{
   max-width: 425px;
   margin: 0 auto;
+
   font-family: Poppins;
   text-align: center;
 }
 
 .App{
-  background-color: wheat;
+  background-color: #6c64f7;
   max-width: 425px;
   margin: 0 auto;
+  height: 100vh;
   position: relative;
 }
 
@@ -22,15 +24,13 @@ body{
 }
 
 .sidenav {
-  height: 70vh;
   width: 100%;
   position: fixed;
   z-index: 6;
   top: -950px;
-  background-color: #febe00;
-  padding-top: 60px;
+  background-color:rgba(254, 190, 0, 0.9);
   text-align: center;
-  transition: top 0.5s ease;
+  transition: top 1s ease-out;
 }
 
 /* Sidenav menu links */
@@ -43,6 +43,18 @@ body{
   font-weight: bold;
   display: block;
   transition: 0.3s;
+}
+
+.top-menu{
+  padding-bottom: 40px;
+  padding-top: 15px;
+  margin: 0.5em;
+}
+
+.top-menu a{
+  font-size: medium;
+  text-align: left;
+  padding: 0;
 }
 
 .sidenav ul {
@@ -78,4 +90,8 @@ body{
   height: 5px;
   background-color: white;
   margin: 6px 0;
+}
+
+.profile{
+  display: flex;
 }
