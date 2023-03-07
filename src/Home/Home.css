@@ -1,6 +1,7 @@
 .grid{
     display: grid;
     position: relative;
+    z-index: 0;
     height: 100vh;
     grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
