@@ -1,0 +1,88 @@
+.grid{
+    display: grid;
+    position: relative;
+    height: 100vh;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-areas: 
+    "article1 article1 article1 article1 article7 article8"
+    "article1 article1 article1 article1 article3 article3"
+    "article1 article1 article1 article1 article3 article3"
+    "article4 article4 article2 article2 article2 article2"
+    "article4 article4 article2 article2 article2 article2"
+    "article9 article10 article2 article2 article2 article2"
+    "article5 article5 article5 article6 article6 article6";
+}
+
+.title{
+    position: absolute;
+    bottom: 54vh;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+}
+
+.title h1{
+    display: block;
+    text-align: center;
+}
+
+.grid a{
+    width: 100%;
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+}
+
+#article1{
+    grid-area: article1;
+    background-color: red;
+}
+
+#article2{
+    grid-area: article2;
+    background-color: green;
+}
+
+#article3{
+    grid-area: article3;
+    background-color: yellow;
+}
+
+#article4{
+    grid-area: article4;
+    background-color: blue;
+}
+
+#article5{
+    grid-area: article5;
+    background-color: orange;
+}
+
+#article6{
+    grid-area: article6;
+    background-color: whitesmoke;
+}
+
+#article7{
+    grid-area: article7;
+    background-color: black;
+}
+
+#article8{
+    grid-area: article8;
+    background-color: darkcyan;
+}
+
+#article9{
+    grid-area: article9;
+    background-color: pink;
+}
+
+#article10{
+    grid-area: article10;
+    background-color: magenta;
+}
