@@ -1,0 +1,36 @@
+.login{
+    padding-top: 12em;
+    color: white;
+}
+
+.form{
+    display: inline;
+    position: absolute;
+    left: 0;
+    right: 0;
+}
+
+.login form{
+    display: flex;
+    flex-direction: column;
+}
+
+.login form input{
+    height: 50px;
+    width: 70%;
+    margin: 0 auto;
+    font-size: large;
+    margin-bottom: 1em;
+    border: 5px solid #febd12;
+    border-radius: 40px;
+    text-align: center;
+    font-family: Poppins;
+}
+
+.login form input[type=submit]{
+    margin-top: 3em;
+    background-color: #febd12;
+    color: white;
+    font-weight: bold;
+    text-transform: uppercase;
+}
