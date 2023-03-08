@@ -1,23 +1,55 @@
 import logo from './logo.svg';
+import { Route, Link, Routes } from "react-router-dom";
 import './App.css';
+import Article from './Article/Article';
+import Home from './Home/Home';
+import Swiper from 'swiper';
+import Login from './Login/Login'
 
 function App() {
+  function openNav() {
+    document.getElementById("mySidenav").classList.add("active")
+  }
+
+  function closeNav() {
+    document.getElementById("mySidenav").classList.remove("active")
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div id="mySidenav" className="sidenav">
+        <a id="closeBtn" onClick={closeNav} className="close">×</a>
+        <div className='top-menu'><Link onClick={closeNav} to="/">Home</Link></div>
+
+        <ul>
+          <li><a>Technology</a></li>
+          <li><a>Sport</a></li>
+          <li><a>Art</a></li>
+          <li><a>Music</a></li>
+          <li><a>Fashion</a></li>
+        </ul>
+        <div className='profile'>
+          <Link to="/Login" onClick={closeNav}>Login</Link>
+          <p>Register</p>
+        </div>
+      </div>
+
+      {<a onClick={openNav} id="openBtn">
+        <span className="burger-icon">
+          <span></span>
+          <span></span>
+          <span></span>
+        </span>
+      </a>}
+
+      <Routes>
+        <Route exact={true} path="/" element={<Home />} />
+        <Route exact={true} path="/Article" element={<Article />} />
+        <Route exact={true} path="/Login" element={<Login />} />
+      </Routes>
+
+
+
     </div>
   );
 }

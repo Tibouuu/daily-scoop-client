@@ -1,38 +1,97 @@
-.App {
+*{
+  margin: 0 auto;
+}
+
+body{
+  max-width: 425px;
+  margin: 0 auto;
+
+  font-family: Poppins;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.App{
+  background-color: #6c64f7;
+  max-width: 425px;
+  margin: 0 auto;
+  height: 100vh;
+  position: relative;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+#mySidenav{
+  display: block;
+  position: absolute;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.sidenav {
+  width: 100%;
+  position: fixed;
+  z-index: 6;
+  top: -950px;
+  background-color:rgba(254, 190, 0, 0.9);
+  text-align: center;
+  transition: top 1s ease-out;
+}
+
+/* Sidenav menu links */
+.sidenav a {
+  padding: 8px 8px 20px 32px;
+  text-decoration: none;
+  font-size: 25px;
   color: white;
+  text-transform: uppercase;
+  font-weight: bold;
+  display: block;
+  transition: 0.3s;
 }
 
-.App-link {
-  color: #61dafb;
+.top-menu{
+  padding-bottom: 40px;
+  padding-top: 15px;
+  margin: 0.5em;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.top-menu a{
+  font-size: medium;
+  text-align: left;
+  padding: 0;
+}
+
+.sidenav ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Active class */
+.sidenav.active {
+  top: 0;
+}
+
+/* Close btn */
+.sidenav .close {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+}
+
+/* Icône burger */
+
+#openBtn{
+  position: absolute;
+  left: 10px;
+  z-index: 1;
+}
+
+.burger-icon span {
+  display: block;
+  width: 35px;
+  height: 5px;
+  background-color: white;
+  margin: 6px 0;
+}
+
+.profile{
+  display: flex;
 }
