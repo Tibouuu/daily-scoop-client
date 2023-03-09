@@ -73,7 +73,7 @@ function App() {
         <Route exact={true} path="/Top" element={<Top />} />
         <Route exact={true} path="/Login" element={<Login />} />
         <Route exact={true} path="/Registration" element={<Register />} />
-        <Route exact={true} path="/Archive" element={<Archive/>} />
+        <Route exact={true} path="/Archive" element={<Archive />} />
         <Route exact={true} path="/PostArticle" element={<PostArticle />} />
         <Route path="*" element={<h1>404: Not Found</h1>} />
         

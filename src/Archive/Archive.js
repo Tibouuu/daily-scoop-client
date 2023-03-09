@@ -5,9 +5,9 @@ import { Link, Routes, Route } from "react-router-dom";
 import { useState, useEffect } from "react";
 import Article from "../Article/Article";
 
-function Archive(props){
+function Archive(){
     const [results, setResults] = useState([]);
-    const [filter, setFilter] = useState(props.name);
+    const [filter, setFilter] = useState("");
     let filtered = results.filter(c => c.title.toUpperCase().includes(filter.toUpperCase()));
     async function getArticles() {
         try {
