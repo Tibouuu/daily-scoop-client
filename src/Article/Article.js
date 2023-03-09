@@ -62,11 +62,12 @@ function Article(props) {
     <>
       <div className="article-content">
       <div className="img-container" id="illustration">
-          <img
+         
+          {article.mediaURL ? <img
             className="illustration"
-            src="https://wallpapercave.com/wp/wp7304269.jpg"
+            src={article.mediaURL}
             alt="illustration article"
-          />
+          /> : null}
         </div>
        <div id="page1" className="page-1 shown-page"> <h1>{article.title}</h1>
        
