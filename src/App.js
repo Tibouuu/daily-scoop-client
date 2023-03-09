@@ -12,6 +12,7 @@ import axios from 'axios';
 import { useState } from 'react';
 import Top from './Top/Top';
 import All from './All/All';
+import One from './One/One';
 
 function App() {
 
@@ -68,7 +69,7 @@ function App() {
 
       <Routes>
         <Route exact={true} path="/" element={<Home />} />
-        <Route exact={true} path="/Article/:id" element={<Article />} />
+        <Route exact={true} path="/Article/:id" element={<One />} />
         <Route exact={true} path="/All" element={<All />} />
         <Route exact={true} path="/Top" element={<Top />} />
         <Route exact={true} path="/Login" element={<Login />} />

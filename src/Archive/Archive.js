@@ -11,7 +11,7 @@ function Archive(){
     let filtered = results.filter(c => c.title.toUpperCase().includes(filter.toUpperCase()));
     async function getArticles() {
         try {
-            const data = (await axios.get("http://localhost:8000/api/articles")).data;
+            const data = (await axios.get("http://127.0.0.1:8000/api/articles")).data;
             setResults(data)
         } catch (err) {
             console.error("error Archive/getArticles", err)

@@ -5,6 +5,27 @@ import {useParams, useNavigate} from 'react-router-dom' // import useState
 import axios from 'axios'
 function Article(props) {
 
+
+  function handleCommentSubmit(e) {
+    e.preventDefault();
+    const comment = {
+      content: this.state.content,
+
+    };
+
+    let json = JSON.stringify(comment);
+    axios.post("http://127.0.0.1:8000/api/postcomment/${}",  { headers: { 'Authorization': localStorage.getItem('token') } } )
+        .then(res => {
+            console.log(res)
+
+         
+        }
+
+        )
+
+
+  }
+
     const article = props.article
     console.log(article)
     window.onload = function(){const buttonDown1 = document.querySelector("#down1")
@@ -61,24 +82,22 @@ function Article(props) {
     <>
       <div className="article-content">
       <div className="img-container" id="illustration">
-          <img
+         
+          {article.mediaURL ? <img
             className="illustration"
-            src="https://wallpapercave.com/wp/wp7304269.jpg"
+            src={article.mediaURL}
             alt="illustration article"
-          />
+          /> : null}
         </div>
        <div id="page1" className="page-1 shown-page"> <h1>{article.title}</h1>
        
-        <button onClick={() => {props.changeCurrent(props.current-1)}}>previous</button>
-        <button onClick={() => {props.changeCurrent(props.current+1)}}>next</button>
+        {props.current != undefined ? <button onClick={() => {props.changeCurrent(props.current-1)}}>previous</button> : null}
+        {props.current != undefined ?  <button onClick={() => {props.changeCurrent(props.current+1)}}>next</button>: null}
         <p className="extract">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-          aliquip ex ea commodo consequat.
+          {article.sumary}
         </p>
         <div className="bottom-line">
-          <p className="author">Author Username</p>
+          <p className="author">{article.author}</p>
           <p className="date">01/01/23</p>
         </div>
 
@@ -135,6 +154,14 @@ function Article(props) {
         <div id="page3" className="page-3 next-page">
         <img  id="up2" className="buttonUp" src="/icons/chevrons-up-regular-24.png"/>
             <p>comments</p>
+            {localStorage.getItem("token") ? 
+              <form onSubmit={handleCommentSubmit} className="comment-form">
+              <input type="text" placeholder="Add a comment" />
+              <button>Send</button>
+              </form>
+            
+            : <div class="login-req"> Please log in to comment</div> }
+        
         </div>
       </div>
     </>
