@@ -43,15 +43,14 @@ function App() {
       <div id="mySidenav" className="sidenav">
         <a id="closeBtn" onClick={closeNav} className="close">×</a>
         <div className='top-menu'><Link onClick={closeNav} to="/">Home</Link><Link onClick={closeNav} to="/Archive">Search</Link></div>
-
         <ul>
-          <li><a>Sport</a></li>
-          <li><a>Art</a></li>
-          <li><a>Music</a></li>
-          <li><a>Fashion</a></li>
+          <li><img src="icons/TDS_LOGO+ICONS-11.png"/><a>Sport</a></li>
+          <li><img src="icons/TDS_LOGO+ICONS-13.png"/><a>Art</a></li>
+          <li><img src="icons/TDS_LOGO+ICONS-14.png"/><a>Music</a></li>
+          <li><img src="icons/TDS_LOGO+ICONS-12.png"/><a>Fashion</a></li>
         </ul>
         <div className='profile'>
-          {localStorage.getItem('token') !== '0' ? <div  onClick={logout}>Logout</div> :   
+          {localStorage.getItem('token') !== '0' ? <div onClick={logout}><p>Hi, {localStorage.getItem('name')}</p><p>Logout</p></div> :   
           <div id="login_reg">
               <Link to="/Login" onClick={closeNav}>Login</Link> 
               <Link to="/Registration" onClick={closeNav}>Register</Link> </div>}
@@ -74,7 +73,7 @@ function App() {
         <Route exact={true} path="/Top" element={<Top />} />
         <Route exact={true} path="/Login" element={<Login />} />
         <Route exact={true} path="/Registration" element={<Register />} />
-        <Route exact={true} path="/Archive" element={<Archive />} />
+        <Route exact={true} path="/Archive" element={<Archive/>} />
         <Route exact={true} path="/PostArticle" element={<PostArticle />} />
         <Route path="*" element={<h1>404: Not Found</h1>} />
         

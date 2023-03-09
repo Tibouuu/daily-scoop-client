@@ -56,7 +56,6 @@ function Article(props) {
     })
 }
 
-
     console.log(props.current)
   return (
     <>
@@ -100,31 +99,31 @@ function Article(props) {
             Placerat vestibulum lectus mauris ultrices eros in. Sed viverra
             ipsum nunc aliquet bibendum enim facilisis. Condimentum id venenatis
             a condimentum vitae sapien. Auctor eu augue ut lectus.</p><p> Blandit massa
-            enim nec dui nunc mattis enim. Non pulvinar neque laoreet
-            suspendisse interdum consectetur libero id. Pretium nibh ipsum
-            consequat nisl vel pretium lectus quam. Porttitor rhoncus dolor
-            purus non enim praesent. Lorem sed risus ultricies tristique nulla
-            aliquet. Et ligula ullamcorper malesuada proin libero nunc consequat
-            interdum. Natoque penatibus et magnis dis parturient montes
-            nascetur. Amet dictum sit amet justo donec enim diam vulputate ut.
-            Ac felis donec et odio pellentesque diam volutpat commodo.</p><p> Morbi
-            enim nunc faucibus a pellentesque sit amet porttitor eget. Viverra
-            nibh cras pulvinar mattis. Et leo duis ut diam quam nulla porttitor
-            massa id. Laoreet suspendisse interdum consectetur libero id
-            faucibus nisl tincidunt eget. Elit scelerisque mauris pellentesque
-            pulvinar pellentesque habitant morbi tristique senectus. Potenti
-            nullam ac tortor vitae purus faucibus.</p><p> At urna condimentum mattis
-            pellentesque id nibh. Odio eu feugiat pretium nibh ipsum consequat
-            nisl vel. Hendrerit dolor magna eget est lorem. Sagittis aliquam
-            malesuada bibendum arcu vitae elementum curabitur vitae. Turpis
-            cursus in hac habitasse platea dictumst. Iaculis urna id volutpat
-            lacus laoreet non curabitur gravida arcu.</p><p> Auctor augue mauris augue
-            neque gravida in fermentum et sollicitudin. Est ullamcorper eget
-            nulla facilisi etiam dignissim. Tortor condimentum lacinia quis vel
-            eros donec ac odio. Enim eu turpis egestas pretium aenean. Enim eu
-            turpis egestas pretium aenean. Adipiscing elit ut aliquam purus sit
-            amet luctus venenatis lectus. Et ligula ullamcorper malesuada proin
-   
+              enim nec dui nunc mattis enim. Non pulvinar neque laoreet
+              suspendisse interdum consectetur libero id. Pretium nibh ipsum
+              consequat nisl vel pretium lectus quam. Porttitor rhoncus dolor
+              purus non enim praesent. Lorem sed risus ultricies tristique nulla
+              aliquet. Et ligula ullamcorper malesuada proin libero nunc consequat
+              interdum. Natoque penatibus et magnis dis parturient montes
+              nascetur. Amet dictum sit amet justo donec enim diam vulputate ut.
+              Ac felis donec et odio pellentesque diam volutpat commodo.</p><p> Morbi
+                enim nunc faucibus a pellentesque sit amet porttitor eget. Viverra
+                nibh cras pulvinar mattis. Et leo duis ut diam quam nulla porttitor
+                massa id. Laoreet suspendisse interdum consectetur libero id
+                faucibus nisl tincidunt eget. Elit scelerisque mauris pellentesque
+                pulvinar pellentesque habitant morbi tristique senectus. Potenti
+                nullam ac tortor vitae purus faucibus.</p><p> At urna condimentum mattis
+                  pellentesque id nibh. Odio eu feugiat pretium nibh ipsum consequat
+                  nisl vel. Hendrerit dolor magna eget est lorem. Sagittis aliquam
+                  malesuada bibendum arcu vitae elementum curabitur vitae. Turpis
+                  cursus in hac habitasse platea dictumst. Iaculis urna id volutpat
+                  lacus laoreet non curabitur gravida arcu.</p><p> Auctor augue mauris augue
+                    neque gravida in fermentum et sollicitudin. Est ullamcorper eget
+                    nulla facilisi etiam dignissim. Tortor condimentum lacinia quis vel
+                    eros donec ac odio. Enim eu turpis egestas pretium aenean. Enim eu
+                    turpis egestas pretium aenean. Adipiscing elit ut aliquam purus sit
+                    amet luctus venenatis lectus. Et ligula ullamcorper malesuada proin
+
           </p>
         </div>
         <div className="social-container">

@@ -1,0 +1,39 @@
+
+.archive input{
+    height: 20px;
+    width: 70%;
+    text-align: center;
+    border: 3px solid #febd12;
+    border-radius: 20px;
+    font-family: Poppins;
+    margin-top: 0.5em;
+    margin-left: 3em; 
+}
+
+.article-item{
+    text-align: left;
+    margin: 1em;
+}
+
+.archive a{
+    text-decoration: none;
+}
+
+.article-item div{
+    display: flex;
+    align-items: center;
+}
+
+.article-item img{
+    width: 30px;
+    
+    border-radius: 50%;
+    background-color: whitesmoke;
+    margin: 0;
+}
+
+.article-item p{
+    margin: 0;
+    color: white;
+    padding-left: 0.3em;
+}

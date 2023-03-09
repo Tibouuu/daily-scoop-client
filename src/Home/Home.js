@@ -6,18 +6,18 @@ function Home() {
     return (
         <div className="Home">
             <div className="grid">
-                <Link id="article1" to="/Article"><Article /></Link>
-                <Link id="article2" to="/Article"><Article /></Link>
-                <Link id="article3" to="/Article"><Article /></Link>
-                <Link id="article4" to="/Article"><Article /></Link>
-                <Link id="article5" to="/Article"><Article /></Link>
-                <Link id="article6" to="/Article"><Article /></Link>
-                <Link id="article7" to="/Article"><Article /></Link>
-                <Link id="article8" to="/Article"><Article /></Link>
-                <Link id="article9" to="/Article"><Article /></Link>
-                <Link id="article10" to="/Article"><Article /></Link>
+                <Link id="article1" to="/Article"></Link>
+                <Link id="article2" to="/Article"></Link>
+                <Link id="article3" to="/Article"></Link>
+                <Link id="article4" to="/Article"></Link>
+                <Link id="article5" to="/Article"></Link>
+                <Link id="article6" to="/Article"></Link>
+                <Link id="article7" to="/Article"></Link>
+                <Link id="article8" to="/Article"></Link>
+                <Link id="article9" to="/Article"></Link>
+                <Link id="article10" to="/Article"></Link>
                 <div className="title">
-                    <h1>Home</h1>
+                    <img src="icons/TDS_LOGO+ICONS-01.png"/>
                 </div>
             </div>
         </div>

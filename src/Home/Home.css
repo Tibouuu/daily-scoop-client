@@ -17,16 +17,16 @@
 
 .title{
     position: absolute;
-    bottom: 54vh;
+    bottom: 43vh;
     left: 0;
     right: 0;
     display: flex;
     align-items: center;
 }
 
-.title h1{
+.title img{
     display: block;
-    text-align: center;
+    width: 50%;
 }
 
 .grid a{
@@ -40,50 +40,61 @@
 
 #article1{
     grid-area: article1;
-    background-color: red;
+    background-image: url("../../public/IMG/A/AI\ THAT\ MAKES\ IMAGES.png");
+    background-size: cover;
 }
 
 #article2{
     grid-area: article2;
-    background-color: green;
+    /*background-image: url("../../public/IMG/S/The\ benefits\ of\ using\ technology\ in\ sport.png");
+    background-size: cover;*/
+    background-color: #3a66ff;
 }
 
 #article3{
     grid-area: article3;
-    background-color: yellow;
+    background-image: url("../../public/IMG/F/Cartier\ and\ Tiffany\ are\ getting\ into\ Snapchat\ AR\ to\ sell\ luxury\ to\ Gen\ Z.jpeg.png");
+    background-size: cover;
 }
 
 #article4{
     grid-area: article4;
-    background-color: blue;
+    background-image: url("../../public/IMG/M/2023\ The\ Rise\ of\ Artificial\ Intelligence\ In\ Music.png");
+    background-size: cover;
 }
 
 #article5{
     grid-area: article5;
-    background-color: orange;
+    background-image: url("../../public/IMG/F/Fashion\ collaborations\ embracing\ technology\ in\ 2023.\ P.png");
+    background-size: cover;
 }
 
 #article6{
     grid-area: article6;
-    background-color: whitesmoke;
+    background-image: url("../../public/IMG/A/Technology\ and\ Art\ in\ 2023\ New\ Opportunities\ for\ Creativity.png");
+    background-size: cover;
 }
 
 #article7{
     grid-area: article7;
-    background-color: black;
+    background-image: url("../../public/IMG/S/The\ key\ trends\ shaping\ global\ sport\ ahead\ of\ 2023.png");
+    background-size: cover;
 }
 
 #article8{
     grid-area: article8;
-    background-color: darkcyan;
+    background-image: url("../../public/IMG/M/key\ insights\ from\ tiktok.png");
+    background-size: cover;
 }
 
 #article9{
     grid-area: article9;
-    background-color: pink;
+    background-image: url("../../public/IMG/M/The\ Best\ Times\ to\ Post\ on\ Social\ Media\ For\ Musicians\ in\ 2023.png");
+    background-size: cover;
 }
 
 #article10{
     grid-area: article10;
-    background-color: magenta;
+    background-image: url("../../public/IMG/F/The\ Future\ of\ Fashion\ How\ tech\ is\ reshaping\ the\ industry.png");
+    background-size: cover;
 }
