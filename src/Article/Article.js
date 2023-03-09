@@ -9,21 +9,22 @@ function Article(props) {
   function handleCommentSubmit(e) {
     e.preventDefault();
     const comment = {
-      content: this.state.content,
+      comment_text: document.getElementById("comment").value,
 
     };
-
+    let token = localStorage.getItem('token');
+    console.log(token)
+    console.log(comment)
+    
     let json = JSON.stringify(comment);
-    axios.post("http://127.0.0.1:8000/api/postcomment/${}",  { headers: { 'Authorization': localStorage.getItem('token') } } )
-        .then(res => {
-            console.log(res)
-
-         
-        }
-
-        )
-
-
+    axios.post("http://127.0.0.1:8000/api/comment/"+article.id+"/"+comment.comment_text, { 
+  headers: { 
+    'Authorization': token ,
+  } 
+})
+.then(res => {
+  console.log(res)
+})
   }
 
     const article = props.article
@@ -156,7 +157,7 @@ function Article(props) {
             <p>comments</p>
             {localStorage.getItem("token") ? 
               <form onSubmit={handleCommentSubmit} className="comment-form">
-              <input type="text" placeholder="Add a comment" />
+              <input type="text" id="comment" placeholder="Add a comment" />
               <button>Send</button>
               </form>
             
