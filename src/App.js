@@ -10,6 +10,8 @@ import Register from './Register/Register';
 import PostArticle from './Journalist/PostArticle';
 import axios from 'axios';
 import { useState } from 'react';
+import Top from './Top/Top';
+import All from './All/All';
 
 function App() {
 
@@ -32,7 +34,8 @@ function App() {
   function logout() {
     
     localStorage.setItem('token','0')
-    window.location.reload()
+    localStorage.setItem('level','0')
+    window.location.href = "/";
   }
   
   return (
@@ -65,8 +68,9 @@ function App() {
 
       <Routes>
         <Route exact={true} path="/" element={<Home />} />
-
         <Route exact={true} path="/Article/:id" element={<Article />} />
+        <Route exact={true} path="/All" element={<All />} />
+        <Route exact={true} path="/Top" element={<Top />} />
         <Route exact={true} path="/Login" element={<Login />} />
         <Route exact={true} path="/Registration" element={<Register />} />
         <Route exact={true} path="/Archive" element={<Archive/>} />

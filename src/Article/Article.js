@@ -1,38 +1,76 @@
+import { click } from "@testing-library/user-event/dist/click";
 import "./Article.css";
-import {
-  useParams, generatePath,
-} from "react-router-dom";
-
+import React, { useState, useEffect } from 'react';
+import {useParams, useNavigate} from 'react-router-dom' // import useState
+import axios from 'axios'
 function Article(props) {
-  window.onload = function () {
-    const articleImage = document.querySelector("#illustration")
-    window.addEventListener("scroll", pictureOnScroll);
 
-    function pictureOnScroll() {
+    const article = props.article
+    console.log(article)
+    window.onload = function(){const buttonDown1 = document.querySelector("#down1")
+  const buttonDown2 = document.querySelector("#down2")
+  const buttonUp1 = document.querySelector("#up1")
+  const buttonUp2 = document.querySelector("#up2")
+  const page1 = document.querySelector("#page1")
+  const page2 = document.querySelector("#page2")
+  const page3 = document.querySelector("#page3")
+  const articleImage= document.querySelector("#illustration")
+    buttonDown1.addEventListener("click",()=>{
+        page2.classList.remove("next-page")
+        page1.classList.remove("shown-page")
+        page1.classList.add("previous-page")
+        page2.classList.add("shown-page")
+        articleImage.classList.add("scrolled-down");
+    });
 
-      console.log(articleImage)
-      window.addEventListener("scroll", () => {
-        if (window.pageYOffset > 300) {
-          articleImage.classList.add("scrolled-down");
-        } else {
-          articleImage.classList.remove("scrolled-down");
-        }
-      });
-    }
-  }
+    buttonDown2.addEventListener("click",()=>{
+        page3.classList.add("shown-page")
+        page2.classList.add("previous-page")
+        page3.classList.remove("next-page")
+        page2.classList.remove("shown-page")
+        window.scrollTo(0,0);
+       
+       
+    });
 
+    buttonUp1.addEventListener("click",()=>{
+        page1.classList.add("shown-page")
+        page2.classList.add("next-page")
+        page1.classList.remove("previous-page")
+        page2.classList.remove("shown-page")
+        articleImage.classList.remove("scrolled-down");
+        window.scrollTo(0,0);
+       
+       
+    });
+
+    buttonUp2.addEventListener("click",()=>{
+        page2.classList.add("shown-page")
+        page3.classList.add("next-page")
+        page2.classList.remove("previous-page")
+        page3.classList.remove("shown-page")
+  
+        window.scrollTo(0,0);
+       
+       
+    })
+}
+
+    console.log(props.current)
   return (
     <>
       <div className="article-content">
-        <h1>{props.title}</h1>
-        <div className="img-container" id="illustration">
+      <div className="img-container" id="illustration">
           <img
             className="illustration"
             src="https://wallpapercave.com/wp/wp7304269.jpg"
             alt="illustration article"
           />
         </div>
-
+       <div id="page1" className="page-1 shown-page"> <h1>{article.title}</h1>
+       
+        <button onClick={() => {props.changeCurrent(props.current-1)}}>previous</button>
+        <button onClick={() => {props.changeCurrent(props.current+1)}}>next</button>
         <p className="extract">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
@@ -43,6 +81,11 @@ function Article(props) {
           <p className="author">Author Username</p>
           <p className="date">01/01/23</p>
         </div>
+
+        <img id="down1" className="buttonDown" src="/icons/chevrons-down-regular-24.png" />
+        </div>
+        <div id="page2" className="page-2 next-page">
+            <img  id="up1" className="buttonUp" src="/icons/chevrons-up-regular-24.png"/>
         <div className="main-article extract">
           <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
@@ -81,6 +124,17 @@ function Article(props) {
                     amet luctus venenatis lectus. Et ligula ullamcorper malesuada proin
 
           </p>
+        </div>
+        <div className="social-container">
+            <div className="like"></div>
+            <div className="comment"></div>
+            <div className="share"></div>
+        </div>
+        <img  id="down2" className="buttonDown" src="/icons/chevrons-down-regular-24.png" />
+        </div>
+        <div id="page3" className="page-3 next-page">
+        <img  id="up2" className="buttonUp" src="/icons/chevrons-up-regular-24.png"/>
+            <p>comments</p>
         </div>
       </div>
     </>
