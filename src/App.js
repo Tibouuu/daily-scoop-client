@@ -5,6 +5,8 @@ import Article from './Article/Article';
 import Home from './Home/Home';
 import Swiper from 'swiper';
 import Login from './Login/Login'
+import Archive from './Archive/Archive';
+import Register from './Register/Register';
 
 function App() {
   function openNav() {
@@ -19,10 +21,9 @@ function App() {
     <div className="App">
       <div id="mySidenav" className="sidenav">
         <a id="closeBtn" onClick={closeNav} className="close">×</a>
-        <div className='top-menu'><Link onClick={closeNav} to="/">Home</Link></div>
+        <div className='top-menu'><Link onClick={closeNav} to="/">Home</Link><Link onClick={closeNav} to="/Archive">Search</Link></div>
 
         <ul>
-          <li><a>Technology</a></li>
           <li><a>Sport</a></li>
           <li><a>Art</a></li>
           <li><a>Music</a></li>
@@ -30,7 +31,7 @@ function App() {
         </ul>
         <div className='profile'>
           <Link to="/Login" onClick={closeNav}>Login</Link>
-          <p>Register</p>
+          <Link to="/Registration" onClick={closeNav}>Register</Link>
         </div>
       </div>
 
@@ -46,6 +47,8 @@ function App() {
         <Route exact={true} path="/" element={<Home />} />
         <Route exact={true} path="/Article" element={<Article />} />
         <Route exact={true} path="/Login" element={<Login />} />
+        <Route exact={true} path="/Registration" element={<Register />} />
+        <Route exact={true} path="/Archive" element={<Archive />} />
       </Routes>
 
 

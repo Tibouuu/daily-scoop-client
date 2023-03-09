@@ -34,3 +34,12 @@
     font-weight: bold;
     text-transform: uppercase;
 }
+
+.login a{
+    text-decoration: none;
+    color: white;
+}
+
+.login a strong{
+    color:#febd12;
+}
