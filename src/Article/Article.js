@@ -5,6 +5,27 @@ import {useParams, useNavigate} from 'react-router-dom' // import useState
 import axios from 'axios'
 function Article(props) {
 
+
+  function handleCommentSubmit(e) {
+    e.preventDefault();
+    const comment = {
+      content: this.state.content,
+
+    };
+
+    let json = JSON.stringify(comment);
+    axios.post("http://127.0.0.1:8000/api/postcomment/${}",  { headers: { 'Authorization': localStorage.getItem('token') } } )
+        .then(res => {
+            console.log(res)
+
+         
+        }
+
+        )
+
+
+  }
+
     const article = props.article
     console.log(article)
     window.onload = function(){const buttonDown1 = document.querySelector("#down1")
@@ -136,6 +157,14 @@ function Article(props) {
         <div id="page3" className="page-3 next-page">
         <img  id="up2" className="buttonUp" src="/icons/chevrons-up-regular-24.png"/>
             <p>comments</p>
+            {localStorage.getItem("token") ? 
+              <form onSubmit={handleCommentSubmit} className="comment-form">
+              <input type="text" placeholder="Add a comment" />
+              <button>Send</button>
+              </form>
+            
+            : <div class="login-req"> Please log in to comment</div> }
+        
         </div>
       </div>
     </>
