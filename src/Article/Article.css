@@ -1,0 +1,56 @@
+h1{
+    font-variant: small-caps;
+    font-weight: 900;
+    width:100%;
+    text-align: left;
+}
+
+.img-container{
+    width:100vw;
+    overflow: hidden;
+    object-fit: fill;
+    transition: 0.5s;
+    
+}
+
+.scrolled-down{
+    width:100vw;
+    height:20vh;
+    overflow: hidden;
+    object-fit: fill;
+    position: fixed;
+    top:0;
+    transition: 0.5s;
+}
+
+.illustration{
+    max-width: 100%;
+    object-fit:cover;
+}
+
+.article-content{
+    width:80%;
+    margin:auto;
+}
+
+.extract{
+
+   text-align: justify;
+}
+
+.bottom-line{
+    width:100%;
+    text-align: right;
+    font-style: italic;
+}
+
+.article-content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.main-article{
+    position: absolute;
+    top:100vh;
+}
