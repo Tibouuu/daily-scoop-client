@@ -30,9 +30,9 @@ function Article(props) {
 })
   }
 
-    const article = props.article
+   
     console.log(article)
-    window.onload = function(){const buttonDown1 = document.querySelector("#down1")
+   /* window.onload = function(){const buttonDown1 = document.querySelector("#down1")
   const buttonDown2 = document.querySelector("#down2")
   const buttonUp1 = document.querySelector("#up1")
   const buttonUp2 = document.querySelector("#up2")
@@ -73,7 +73,7 @@ function Article(props) {
 
       window.scrollTo(0, 0);
     }); */
-  };
+
 
   function down() {
     if(page<3)
