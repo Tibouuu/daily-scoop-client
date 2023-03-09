@@ -21,7 +21,6 @@ function Article(props) {
     }
   }
 
-
   return (
     <>
       <div className="article-content">

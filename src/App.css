@@ -29,28 +29,29 @@ body{
   width: 100%;
   position: fixed;
   z-index: 6;
+  color: white;
   top: -950px;
   background-color:rgba(254, 190, 0, 0.9);
-  text-align: center;
   transition: top 1s ease-out;
 }
 
 /* Sidenav menu links */
 .sidenav a {
-  padding: 8px 8px 20px 32px;
   text-decoration: none;
   font-size: 25px;
   color: white;
   text-transform: uppercase;
   font-weight: bold;
   display: block;
+  margin-left: 0;
+  cursor: pointer;
   transition: 0.3s;
 }
 
 .top-menu{
-  padding-bottom: 40px;
   padding-top: 15px;
   margin: 0.5em;
+  display: flex;
 }
 
 .top-menu a{
@@ -59,11 +60,24 @@ body{
   padding: 0;
 }
 
+
 .sidenav ul {
   list-style-type: none;
   padding: 0;
-  margin: 0;
+  margin: 2em;
 }
+
+.sidenav ul li{
+  display: flex;
+  align-items: center;
+}
+
+.sidenav ul li img{
+  width: 45px;
+  margin-right: 0;
+  height: 45px;
+}
+
 
 /* Active class */
 .sidenav.active {
@@ -94,6 +108,12 @@ body{
   margin: 6px 0;
 }
 
-.profile{
+.profile div{
   display: flex;
 }
+
+.profile p{
+  margin: 0 auto;
+  cursor: pointer;
+}
+

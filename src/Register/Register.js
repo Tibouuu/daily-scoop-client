@@ -32,6 +32,10 @@ function Register(){
             let data = res.data.token_type + " " + res.data.access_token;
             console.log(data)
             localStorage.setItem("token", data);
+            localStorage.setItem("level", res.data.level);
+            localStorage.setItem("isLoggedIn", true);
+            localStorage.setItem("name",user.name)
+            window.location.href = "/";
         }
         )
         
@@ -40,7 +44,7 @@ function Register(){
     return(
         <div className="login">
             <h2>Welcome to the Daily Scoop!</h2>
-            <form onSubmit={handleRegister}>
+            <form onSubmit={handleRegister}> 
                 <input type="text" name="name" placeholder="Name"></input>
                 <input type="text" name="email" placeholder="Email"></input>
                 <input type="password" name="pwd" placeholder="Password"></input>

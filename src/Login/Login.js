@@ -10,10 +10,7 @@ function Login() {
         name: "",
         pwd: ""
     })
-
-
-
-
+    
     const handleLogin = (e) => {
         e.preventDefault();
         const { name, pwd } = e.target;
@@ -21,21 +18,23 @@ function Login() {
             email: name.value,
             password: pwd.value
         }
-
-        //change user to json 
-        const jsonUser = JSON.stringify(user);
-
-        axios.post("http://127.0.0.1:8000/api/login", jsonUser, { headers: { 'Content-Type': 'application/json' } })
-            .then(res => {
-                console.log(res)
-                let data = res.data.token_type + " " + res.data.access_token;
-                console.log(data)
-                localStorage.setItem("token", data);
-
-            }
-            )
-
+  
+        const jsonUser = JSON.stringify(user);  
+    
+        axios.post("http://127.0.0.1:8000/api/login", jsonUser,   { headers: { 'Content-Type': 'application/json' } } )
+        .then(res => {
+            console.log(res)
+            let data = res.data.token_type + " " + res.data.access_token;
+            console.log(data)
+            localStorage.setItem("token", data);
+            localStorage.setItem("level", res.data.level);
+            localStorage.setItem("isLoggedIn", true);
+            localStorage.setItem("name",res.data.name)
+            window.location.href = "/";
+        })
+  
     }
+  
 
     return (
         <div className="login">
