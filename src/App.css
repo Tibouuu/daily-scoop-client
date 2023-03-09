@@ -15,12 +15,14 @@ body{
   max-width: 425px;
   margin: 0 auto;
   height: 100vh;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   position: relative;
 }
 
 #mySidenav{
   display: block;
   position: absolute;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
 .sidenav {
