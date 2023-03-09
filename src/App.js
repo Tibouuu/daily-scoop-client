@@ -29,6 +29,7 @@ function App() {
           <li><a>Fashion</a></li>
         </ul>
         <div className='profile'>
+          <p>{localStorage.getItem('name')}</p>
           <Link to="/Login" onClick={closeNav}>Login</Link>
           <Link to="/Registration" onClick={closeNav}>Register</Link>
         </div>
@@ -44,6 +45,7 @@ function App() {
 
       <Routes>
         <Route exact={true} path="/" element={<Home />} />
+
         <Route exact={true} path="/Article" element={<Article />} />
         <Route exact={true} path="/Login" element={<Login />} />
         <Route exact={true} path="/Registration" element={<Register />} />
