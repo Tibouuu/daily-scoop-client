@@ -70,16 +70,13 @@ function Article(props) {
         </div>
        <div id="page1" className="page-1 shown-page"> <h1>{article.title}</h1>
        
-        <button onClick={() => {props.changeCurrent(props.current-1)}}>previous</button>
-        <button onClick={() => {props.changeCurrent(props.current+1)}}>next</button>
+        {props.current != undefined ? <button onClick={() => {props.changeCurrent(props.current-1)}}>previous</button> : null}
+        {props.current != undefined ?  <button onClick={() => {props.changeCurrent(props.current+1)}}>next</button>: null}
         <p className="extract">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-          aliquip ex ea commodo consequat.
+          {article.sumary}
         </p>
         <div className="bottom-line">
-          <p className="author">Author Username</p>
+          <p className="author">{article.author}</p>
           <p className="date">01/01/23</p>
         </div>
 
