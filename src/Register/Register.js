@@ -19,7 +19,8 @@ function Register(){
         const user = {
             name: name.value,
             email: email.value,
-            password: pwd.value
+            password: pwd.value,
+            level:"user"
         }
 
         //change user to json 
