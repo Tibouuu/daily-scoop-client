@@ -1,5 +1,5 @@
 import logo from './logo.svg';
-import { Route, Link, Routes } from "react-router-dom";
+import { Route, Link, Routes, redirect } from "react-router-dom";
 import './App.css';
 import Article from './Article/Article';
 import Home from './Home/Home';
@@ -31,18 +31,8 @@ function App() {
 
   function logout() {
     
-    axios.get('http://127.0.0.1:8000/api/logout',  { headers: { 'Authorization':  localStorage.getItem('token'),
-  
-    'Content-Type': 'application/json'
-  } }  ).then(res => {
-      console.log(res);
-      localStorage.setItem("isLoggedIn", false);
-      this.setState({loggedIn: false});
-
-      localStorage.setItem('token',null);
-       localStorage.setItem('level',null);
-
-    })
+    localStorage.setItem('token','0')
+    window.location.reload()
   }
   
   return (
@@ -58,14 +48,7 @@ function App() {
           <li><a>Fashion</a></li>
         </ul>
         <div className='profile'>
-          {/* {localStorage.getItem('isLoggedIn')  ?  
-              <div  onClick={logout}>Logout</div> : 
-              // <div id="login_reg">
-              // <Link to="/Login" onClick={closeNav}>Login</Link> 
-              // <Link to="/Registration" onClick={closeNav}>Register</Link> </div>
-               null
-              } */}
-          {localStorage.getItem('isLoggedIn')? <div  onClick={logout}>Logout</div> :   
+          {localStorage.getItem('token') !== '0' ? <div  onClick={logout}>Logout</div> :   
           <div id="login_reg">
               <Link to="/Login" onClick={closeNav}>Login</Link> 
               <Link to="/Registration" onClick={closeNav}>Register</Link> </div>}

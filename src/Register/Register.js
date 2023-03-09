@@ -32,6 +32,8 @@ function Register(){
             localStorage.setItem("token", data);
             localStorage.setItem("level", res.data.level);
             localStorage.setItem("isLoggedIn", true);
+
+            window.location.href = "/archive";
         }
         )
         
