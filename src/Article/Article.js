@@ -1,9 +1,13 @@
 import { click } from "@testing-library/user-event/dist/click";
 import "./Article.css";
+import React, { useState, useEffect } from 'react';
+import {useParams, useNavigate} from 'react-router-dom' // import useState
+import axios from 'axios'
+function Article(props) {
 
-function Article() {
-
-  window.onload = function(){const buttonDown1 = document.querySelector("#down1")
+    const article = props.article
+    console.log(article)
+    window.onload = function(){const buttonDown1 = document.querySelector("#down1")
   const buttonDown2 = document.querySelector("#down2")
   const buttonUp1 = document.querySelector("#up1")
   const buttonUp2 = document.querySelector("#up2")
@@ -53,7 +57,7 @@ function Article() {
 }
 
 
-
+    console.log(props.current)
   return (
     <>
       <div className="article-content">
@@ -64,9 +68,10 @@ function Article() {
             alt="illustration article"
           />
         </div>
-       <div id="page1" className="page-1 shown-page"> <h1>Title goes here</h1>
+       <div id="page1" className="page-1 shown-page"> <h1>{article.title}</h1>
        
-
+        <button onClick={() => {props.changeCurrent(props.current-1)}}>previous</button>
+        <button onClick={() => {props.changeCurrent(props.current+1)}}>next</button>
         <p className="extract">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
