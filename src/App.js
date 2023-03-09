@@ -32,7 +32,8 @@ function App() {
   function logout() {
     
     localStorage.setItem('token','0')
-    window.location.reload()
+    localStorage.setItem('level','0')
+    window.location.href = "/";
   }
   
   return (
