@@ -32,7 +32,7 @@ function Login(){
         console.log(data)
         localStorage.setItem("token", data);
         localStorage.setItem("level", res.data.level);
-
+        localStorage.setItem("isLoggedIn", true);
     }
     )
 

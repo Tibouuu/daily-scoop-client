@@ -9,8 +9,18 @@ import Archive from './Archive/Archive';
 import Register from './Register/Register';
 import PostArticle from './Journalist/PostArticle';
 import axios from 'axios';
+import { useState } from 'react';
 
 function App() {
+
+  const [user, setUser] = useState({
+    name: "",
+    email: "",
+    password: "",
+    loggedIn: localStorage.getItem("isLoggedIn")
+  })
+
+
   function openNav() {
     document.getElementById("mySidenav").classList.add("active")
   }
@@ -20,13 +30,21 @@ function App() {
   }
 
   function logout() {
-    localStorage.removeItem('token');
-    localStorage.removeItem('level');
-    axios.get('http://localhost:5000/logout').then(res => {
+    
+    axios.get('http://127.0.0.1:8000/api/logout',  { headers: { 'Authorization':  localStorage.getItem('token'),
+  
+    'Content-Type': 'application/json'
+  } }  ).then(res => {
       console.log(res);
+      localStorage.setItem("isLoggedIn", false);
+      this.setState({loggedIn: false});
+
+      localStorage.setItem('token',null);
+       localStorage.setItem('level',null);
+
     })
   }
-
+  
   return (
     <div className="App">
       <div id="mySidenav" className="sidenav">
@@ -40,11 +58,18 @@ function App() {
           <li><a>Fashion</a></li>
         </ul>
         <div className='profile'>
-          <Link to="/Login" onClick={closeNav}>Login</Link>
-          {localStorage.getItem('token') === "" ? <Link to="/Login" onClick={closeNav}>Login</Link> : <div  onClick={logout}>Logout</div>}
-
-          <Link to="/Registration" onClick={closeNav}>Register</Link>
-          {localStorage.getItem('level') === 'journalist' ? <link to="/PostArticle" onClick={closeNav}>Post Article</link>  : null }
+          {/* {localStorage.getItem('isLoggedIn')  ?  
+              <div  onClick={logout}>Logout</div> : 
+              // <div id="login_reg">
+              // <Link to="/Login" onClick={closeNav}>Login</Link> 
+              // <Link to="/Registration" onClick={closeNav}>Register</Link> </div>
+               null
+              } */}
+          {localStorage.getItem('isLoggedIn')? <div  onClick={logout}>Logout</div> :   
+          <div id="login_reg">
+              <Link to="/Login" onClick={closeNav}>Login</Link> 
+              <Link to="/Registration" onClick={closeNav}>Register</Link> </div>}
+          {localStorage.getItem('level') === 'journalist' ? <Link to="/PostArticle" onClick={closeNav}>Post Article</Link>  : null }
         </div>
       </div>
 
