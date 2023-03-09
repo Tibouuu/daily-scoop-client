@@ -31,6 +31,7 @@ function Login(){
         let data = res.data.token_type + " " + res.data.access_token;
         console.log(data)
         localStorage.setItem("token", data);
+        localStorage.setItem("level", res.data.level);
 
     }
     )

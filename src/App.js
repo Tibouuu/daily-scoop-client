@@ -8,6 +8,7 @@ import Login from './Login/Login'
 import Archive from './Archive/Archive';
 import Register from './Register/Register';
 import PostArticle from './Journalist/PostArticle';
+import axios from 'axios';
 
 function App() {
   function openNav() {
@@ -16,6 +17,14 @@ function App() {
 
   function closeNav() {
     document.getElementById("mySidenav").classList.remove("active")
+  }
+
+  function logout() {
+    localStorage.removeItem('token');
+    localStorage.removeItem('level');
+    axios.get('http://localhost:5000/logout').then(res => {
+      console.log(res);
+    })
   }
 
   return (
@@ -32,8 +41,10 @@ function App() {
         </ul>
         <div className='profile'>
           <Link to="/Login" onClick={closeNav}>Login</Link>
+          {localStorage.getItem('token') === "" ? <Link to="/Login" onClick={closeNav}>Login</Link> : <div  onClick={logout}>Logout</div>}
+
           <Link to="/Registration" onClick={closeNav}>Register</Link>
-          <Link to="/PostArticle" onClick={closeNav}>Post Article</Link>
+          {localStorage.getItem('level') === 'journalist' ? <link to="/PostArticle" onClick={closeNav}>Post Article</link>  : null }
         </div>
       </div>
 
