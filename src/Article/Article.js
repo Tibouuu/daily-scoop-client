@@ -5,34 +5,38 @@ import { useParams, useNavigate } from "react-router-dom"; // import useState
 import axios from "axios";
 import { func } from "prop-types";
 function Article(props) {
-
-    const article = props.article;
-    const [page, setPage] = useState(1)
-    console.log(article);
+  const article = props.article;
+  const [page, setPage] = useState(1);
+  console.log(article);
   function handleCommentSubmit(e) {
     e.preventDefault();
     const comment = {
       comment_text: document.getElementById("comment").value,
-
     };
-    let token = localStorage.getItem('token');
-    console.log(token)
-    console.log(comment)
-    
+    let token = localStorage.getItem("token");
+    console.log(token);
+    console.log(comment);
+
     let json = JSON.stringify(comment);
-    axios.post("http://127.0.0.1:8000/api/comment/"+article.id+"/"+comment.comment_text, { 
-  headers: { 
-    'Authorization': token ,
-  } 
-})
-.then(res => {
-  console.log(res)
-})
+    axios
+      .post(
+        "http://127.0.0.1:8000/api/comment/" +
+          article.id +
+          "/" +
+          comment.comment_text,
+        {
+          headers: {
+            Authorization: token,
+          },
+        }
+      )
+      .then((res) => {
+        console.log(res);
+      });
   }
 
-   
-    console.log(article)
-   /* window.onload = function(){const buttonDown1 = document.querySelector("#down1")
+  console.log(article);
+  /* window.onload = function(){const buttonDown1 = document.querySelector("#down1")
   const buttonDown2 = document.querySelector("#down2")
   const buttonUp1 = document.querySelector("#up1")
   const buttonUp2 = document.querySelector("#up2")
@@ -74,58 +78,58 @@ function Article(props) {
       window.scrollTo(0, 0);
     }); */
 
-
   function down() {
-    if(page<3)
-    {setPage(page+1)
-    console.log(page)}
+    if (page < 3) {
+      setPage(page + 1);
+      console.log(page);
+    }
   }
 
-  function up(){
-    if(page>1)
-    {setPage(page-1)
-        console.log(page)}
+  function up() {
+    if (page > 1) {
+      setPage(page - 1);
+      console.log(page);
+    }
   }
 
-  function setPosPage1(p){
+  function setPosPage1(p) {
     if (p == 1) {
-       return ("page-1 shown-page")
-    } else  {
-       return ("page-1 previous-page")
+      return "page-1 shown-page";
+    } else {
+      return "page-1 previous-page";
     }
   }
 
-  function setImgState(p){
-    if (p==1){
-        return("img-container")
-    }
-    else{
-        return("img-container scrolled-down")
-    }
-  }
-
-  function setPosPage2(p){
+  function setImgState(p) {
     if (p == 1) {
-        return ("page-2 previous-page")
-     } else if( p==2) {
-        return ("page-2 shown-page")
-     } else {
-        return ("page-2 next-page")
-     }
-  }
-
-  function setPosPage3(p){
-    if(p==3){
-        return ("page-3 shown-page")
-    }else{
-        return ("page-3 next-page")
+      return "img-container";
+    } else {
+      return "img-container scrolled-down";
     }
   }
 
+  function setPosPage2(p) {
+    if (p == 1) {
+      return "page-2 next-page";
+    } else if (p == 2) {
+      return "page-2 shown-page";
+    } else {
+      return "page-2 previous-page";
+    }
+  }
+
+  function setPosPage3(p) {
+    if (p == 3) {
+      return "page-3 shown-page";
+    } else {
+      return "page-3 next-page";
+    }
+  }
 
   console.log(props.current);
   return (
     <>
+      <img class="like" src="/icons/heart-regular-24.png" />
       <div className="article-content">
         <div className={setImgState(page)} id="illustration">
           {article.mediaURL ? (
@@ -137,41 +141,41 @@ function Article(props) {
           ) : null}
         </div>
         <div id="page1" className={setPosPage1(page)} />
-          <h1>{article.title}</h1>
-          {props.current != undefined ? (
-            <button
-              onClick={() => {
-                props.changeCurrent(props.current - 1);
-                setPage(1);
-              }}
-            >
-              previous
-            </button>
-          ) : null}
-          {props.current != undefined ? (
-            <button
-              onClick={() => {
-                props.changeCurrent(props.current + 1);
-                setPage(1);
-              }}
-            >
-              next
-            </button>
-          ) : null}
-          <p className="extract">{article.sumary}</p>
-          <div className="bottom-line">
-            <p className="author">{article.author}</p>
-            <p className="date">Posted at {article.created_at}</p>
-            <p className="date">updated at at {article.updated_at}</p>
-          </div>
-          <img
-            id="down1"
-            onClick={down}
-            className="buttonDown"
-            src="/icons/chevrons-down-regular-24.png"
-          />
-      
-        <div id="page2" className={setPosPage2(page)} >
+        <h1>{article.title}</h1>
+        {props.current != undefined ? (
+          <button
+            onClick={() => {
+              props.changeCurrent(props.current - 1);
+              setPage(1);
+            }}
+          >
+            previous
+          </button>
+        ) : null}
+        {props.current != undefined ? (
+          <button
+            onClick={() => {
+              props.changeCurrent(props.current + 1);
+              setPage(1);
+            }}
+          >
+            next
+          </button>
+        ) : null}
+        <p className="extract">{article.sumary}</p>
+        <div className="bottom-line">
+          <p className="author">{article.author}</p>
+          <p className="date">Posted at {article.created_at}</p>
+          <p className="date">updated at at {article.updated_at}</p>
+        </div>
+        <img
+          id="down1"
+          onClick={down}
+          className="buttonDown"
+          src="/icons/chevrons-down-regular-24.png"
+        />
+
+        <div id="page2" className={setPosPage2(page)}>
           <img
             id="up1"
             onClick={up}
@@ -198,15 +202,15 @@ function Article(props) {
             className="buttonUp"
             src="/icons/chevrons-up-regular-24.png"
           />
-            <p>comments</p>
-            {localStorage.getItem("token") ? 
-              <form onSubmit={handleCommentSubmit} className="comment-form">
+          <p>comments</p>
+          {localStorage.getItem("token") ? (
+            <form onSubmit={handleCommentSubmit} className="comment-form">
               <input type="text" id="comment" placeholder="Add a comment" />
               <button>Send</button>
-              </form>
-            
-            : <div class="login-req"> Please log in to comment</div> }
-        
+            </form>
+          ) : (
+            <div class="login-req"> Please log in to comment</div>
+          )}
         </div>
       </div>
     </>
