@@ -22,7 +22,6 @@ function App() {
       <div id="mySidenav" className="sidenav">
         <a id="closeBtn" onClick={closeNav} className="close">×</a>
         <div className='top-menu'><Link onClick={closeNav} to="/">Home</Link><Link onClick={closeNav} to="/Archive">Search</Link></div>
-
         <ul>
           <li><a>Sport</a></li>
           <li><a>Art</a></li>

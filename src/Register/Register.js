@@ -2,7 +2,7 @@ import "../Login/Login.css"
 import { Link, Routes, Route } from "react-router-dom";
 import Login from "../Login/Login";
 import Form from 'react-bootstrap/Form';
-import Cookies from "cookies";
+
 import axios from "axios";
 
 function Register(){
