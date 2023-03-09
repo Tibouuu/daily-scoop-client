@@ -36,10 +36,12 @@ function PostArticle(){
                 <input type="text" name="content" placeholder="Content"></input>
                 <input type="text" name="thumbnailURL" placeholder="Thumbnail Link"></input>
                 
-                <label htmlFor="mediaType">Media Type</label>
-               
+                <label htmlFor="mediaType">Media Type :</label>
+                    Image
                     <input type="radio" name="mediaType" value="image"></input>
+                    Audio
                     <input type="radio" name="mediaType" value="audio"></input>
+                    Video
                     <input type="radio" name="mediaType" value="video"></input>
               
                 <input type="text" name="mediaURL" placeholder="Media Link"></input>
