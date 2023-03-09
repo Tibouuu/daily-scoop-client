@@ -5,25 +5,47 @@ import { useParams, useNavigate } from "react-router-dom"; // import useState
 import axios from "axios";
 import { func } from "prop-types";
 function Article(props) {
-  const article = props.article;
-  const [page, setPage] = useState(1)
-  console.log(article);
-  window.onload = function () {
-/*     const buttonDown1 = document.querySelector("#down1");
-    const buttonDown2 = document.querySelector("#down2");
-    const buttonUp1 = document.querySelector("#up1");
-    const buttonUp2 = document.querySelector("#up2");
-    const page1 = document.querySelector("#page1");
-    const page2 = document.querySelector("#page2");
-    const page3 = document.querySelector("#page3");
-    const articleImage = document.querySelector("#illustration"); */
 
-/*     buttonDown1.addEventListener("click", () => {
-      page2.classList.remove("next-page");
-      page1.classList.remove("shown-page");
-      page1.classList.add("previous-page");
-      page2.classList.add("shown-page");
-      articleImage.classList.add("scrolled-down");
+    const article = props.article;
+    const [page, setPage] = useState(1)
+    console.log(article);
+  function handleCommentSubmit(e) {
+    e.preventDefault();
+    const comment = {
+      comment_text: document.getElementById("comment").value,
+
+    };
+    let token = localStorage.getItem('token');
+    console.log(token)
+    console.log(comment)
+    
+    let json = JSON.stringify(comment);
+    axios.post("http://127.0.0.1:8000/api/comment/"+article.id+"/"+comment.comment_text, { 
+  headers: { 
+    'Authorization': token ,
+  } 
+})
+.then(res => {
+  console.log(res)
+})
+  }
+
+    const article = props.article
+    console.log(article)
+    window.onload = function(){const buttonDown1 = document.querySelector("#down1")
+  const buttonDown2 = document.querySelector("#down2")
+  const buttonUp1 = document.querySelector("#up1")
+  const buttonUp2 = document.querySelector("#up2")
+  const page1 = document.querySelector("#page1")
+  const page2 = document.querySelector("#page2")
+  const page3 = document.querySelector("#page3")
+  const articleImage= document.querySelector("#illustration")
+    buttonDown1.addEventListener("click",()=>{
+        page2.classList.remove("next-page")
+        page1.classList.remove("shown-page")
+        page1.classList.add("previous-page")
+        page2.classList.add("shown-page")
+        articleImage.classList.add("scrolled-down");
     });
 
     buttonDown2.addEventListener("click", () => {
@@ -176,7 +198,15 @@ function Article(props) {
             className="buttonUp"
             src="/icons/chevrons-up-regular-24.png"
           />
-          <p>comments</p>
+            <p>comments</p>
+            {localStorage.getItem("token") ? 
+              <form onSubmit={handleCommentSubmit} className="comment-form">
+              <input type="text" id="comment" placeholder="Add a comment" />
+              <button>Send</button>
+              </form>
+            
+            : <div class="login-req"> Please log in to comment</div> }
+        
         </div>
       </div>
     </>
