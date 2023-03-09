@@ -7,6 +7,7 @@ import Swiper from 'swiper';
 import Login from './Login/Login'
 import Archive from './Archive/Archive';
 import Register from './Register/Register';
+import PostArticle from './Journalist/PostArticle';
 
 function App() {
   function openNav() {
@@ -32,6 +33,7 @@ function App() {
         <div className='profile'>
           <Link to="/Login" onClick={closeNav}>Login</Link>
           <Link to="/Registration" onClick={closeNav}>Register</Link>
+          <Link to="/PostArticle" onClick={closeNav}>Post Article</Link>
         </div>
       </div>
 
@@ -49,6 +51,9 @@ function App() {
         <Route exact={true} path="/Login" element={<Login />} />
         <Route exact={true} path="/Registration" element={<Register />} />
         <Route exact={true} path="/Archive" element={<Archive />} />
+        <Route exact={true} path="/PostArticle" element={<PostArticle />} />
+        <Route path="*" element={<h1>404: Not Found</h1>} />
+        
       </Routes>
 
 
