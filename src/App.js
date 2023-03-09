@@ -5,6 +5,7 @@ import Article from './Article/Article';
 import Home from './Home/Home';
 import Swiper from 'swiper';
 import Login from './Login/Login'
+import Register from './Register/Register'
 
 function App() {
   function openNav() {
@@ -30,8 +31,10 @@ function App() {
         </ul>
         <div className='profile'>
           <Link to="/Login" onClick={closeNav}>Login</Link>
-          <p>Register</p>
+          <Link to="/Register" onClick={closeNav}>Register</Link>
+        
         </div>
+        
       </div>
 
       {<a onClick={openNav} id="openBtn">
@@ -46,6 +49,7 @@ function App() {
         <Route exact={true} path="/" element={<Home />} />
         <Route exact={true} path="/Article" element={<Article />} />
         <Route exact={true} path="/Login" element={<Login />} />
+        <Route exact={true} path="/Register" element={<Register />} />
       </Routes>
 
 
