@@ -130,7 +130,7 @@ function Article(props) {
   console.log(props.current);
   return (
     <>
-      <img class="like" src="/icons/heart-regular-24.png" />
+      <img className="like" src="/icons/heart-regular-24.png" />
       <div className="article-content">
         <div className={setImgState(page)} id="illustration">
           {article.mediaURL ? (
@@ -210,7 +210,7 @@ function Article(props) {
               <button>Send</button>
             </form>
           ) : (
-            <div class="login-req"> Please log in to comment</div>
+            <div className="login-req"> Please log in to comment</div>
           )}
         </div>
       </div>
