@@ -131,6 +131,28 @@ function Article(props) {
   return (
     <>
       <img className="like" src="/icons/heart-regular-24.png" />
+      {props.current != undefined ? (
+          <button
+          className="button-prev"
+            onClick={() => {
+              props.changeCurrent(props.current - 1);
+              setPage(1);
+            }}
+          >
+            <img src="/icons/TDS_LOGO+ICONS-09.png"/>
+          </button>
+        ) : null}
+        {props.current != undefined ? (
+          <button
+          className="button-next"
+            onClick={() => {
+              props.changeCurrent(props.current + 1);
+              setPage(1);
+            }}
+          >
+            <img src="/icons/TDS_LOGO+ICONS-10.png"/>
+          </button>
+        ) : null}
       <div className="article-content">
         <div className={setImgState(page)} id="illustration">
           {article.mediaURL ? (
@@ -141,28 +163,9 @@ function Article(props) {
             />
           ) : null}
         </div>
-        <div id="page1" className={setPosPage1(page)} />
+        <div id="page1" className={setPosPage1(page)} >
         <h1>{article.title}</h1>
-        {props.current != undefined ? (
-          <button
-            onClick={() => {
-              props.changeCurrent(props.current - 1);
-              setPage(1);
-            }}
-          >
-            previous
-          </button>
-        ) : null}
-        {props.current != undefined ? (
-          <button
-            onClick={() => {
-              props.changeCurrent(props.current + 1);
-              setPage(1);
-            }}
-          >
-            next
-          </button>
-        ) : null}
+
         <p className="extract">{article.sumary}</p>
         <div className="bottom-line">
           <p className="author">{article.author}</p>
@@ -175,7 +178,7 @@ function Article(props) {
           className="buttonDown"
           src="/icons/chevrons-down-regular-24.png"
         />
-
+    </div>
         <div id="page2" className={setPosPage2(page)}>
           <img
             id="up1"

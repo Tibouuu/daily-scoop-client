@@ -8,7 +8,7 @@
 .page-1{
    
     position: relative;
-    top:0;
+    top:0 !important;
 }
 
 .page-2, .page-3{
@@ -22,7 +22,6 @@
     display: block;
     position: relative;
     opacity: 100%;
-    top:0;
     transition: 1s ease;
     
    
@@ -116,6 +115,16 @@
     position:fixed;
     top:50%;
     z-index: 50;
+    background:none;
+    border:none;
+}
+
+.button-next{
+    right:0;
+}
+
+.button-prev{
+   left:0;
 }
 
 .like{
@@ -123,4 +132,10 @@
     right:0;
     margin-right:1rem;
     margin-top:0.5rem;
+}
+
+.button-next img, .button-prev img{
+z-index: 10;
+width:50px;
+opacity: 30%;
 }
