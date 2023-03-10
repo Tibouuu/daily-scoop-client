@@ -56,9 +56,9 @@ function App() {
           {localStorage.getItem('level') === 'journalist' ? <Link to="/PostArticle" onClick={closeNav}>Write</Link>  : null }
         </div>
         <ul>
-          <li><img src="icons/TDS_LOGO+ICONS-11.png"/><a>Sport</a></li>
-          <li><img src="icons/TDS_LOGO+ICONS-13.png"/><a>Art</a></li>
-          <li><img src="icons/TDS_LOGO+ICONS-14.png"/><a>Music</a></li>
+          <li><img src="icons/TDS_LOGO+ICONS-11.png"/><Link onClick={closeNav} to="/Sport">Sport</Link></li>
+          <li><img src="icons/TDS_LOGO+ICONS-13.png"/><Link onClick={closeNav} to="/Art">Art</Link></li>
+          <li><img src="icons/TDS_LOGO+ICONS-14.png"/><Link onClick={closeNav} to="/Music">Music</Link></li>
           <li><img src="icons/TDS_LOGO+ICONS-12.png"/><Link onClick={closeNav} to="/Fashion">Fashion</Link></li>
         </ul>
         <div className='options'>
@@ -89,6 +89,10 @@ function App() {
         <Route exact={true} path="/Article/:id" element={<One />} />
         <Route exact={true} path="/All" element={<All categorie=""/>} />
         <Route exact={true} path="/Fashion" element={<All categorie="3" />} />
+        <Route exact={true} path="/Sports" element={<All categorie="2" />} />
+        <Route exact={true} path="/Technology" element={<All categorie="1" />} />
+        <Route exact={true} path="/Music" element={<All categorie="5" />} />
+        <Route exact={true} path="/Art" element={<All categorie="4" />} />
         <Route exact={true} path="/Top" element={<Top />} />
         <Route exact={true} path="/Login" element={<Login />} />
         <Route exact={true} path="/Registration" element={<Register />} />
