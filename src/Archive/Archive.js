@@ -5,9 +5,9 @@ import { Link, Routes, Route } from "react-router-dom";
 import { useState, useEffect } from "react";
 import Article from "../Article/Article";
 
-function Archive(props){
+function Archive(){
     const [results, setResults] = useState([]);
-    const [filter, setFilter] = useState(props.name);
+    const [filter, setFilter] = useState("");
     let filtered = results.filter(c => c.title.toUpperCase().includes(filter.toUpperCase()));
     async function getArticles() {
         try {
@@ -31,7 +31,7 @@ function Archive(props){
     return(
         <div className="archive">
             <input name="filtre" type="text" placeholder="What would you read?" value={filter} onChange={handleFilterChange} />
-            {filtered.map(x => <Link key={x.id} to={"/Article/:id"}><ArticleItem key={x.id} {...x}/></Link>)}
+            {filtered.map(x => <Link key={x.id} to={"/Article/"+x.id}><ArticleItem key={x.id} {...x}/></Link>)}
         </div>
     )
 }

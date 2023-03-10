@@ -27,7 +27,8 @@ function Article(props) {
         {
           headers: {
             Authorization: token,
-          },
+            accept :'application/json',
+          },         
         }
       )
       .then((res) => {

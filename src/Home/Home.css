@@ -5,6 +5,8 @@
     height: 100vh;
     grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    row-gap: 2px;
+    column-gap: 2px;
     grid-template-areas: 
     "article1 article1 article1 article1 article7 article8"
     "article1 article1 article1 article1 article3 article3"
@@ -40,61 +42,60 @@
 
 #article1{
     grid-area: article1;
-    background-image: url("../../public/IMG/A/AI\ THAT\ MAKES\ IMAGES.png");
+    background-image: url("../../public/IMG/A/a-artandai.jpg");
     background-size: cover;
 }
 
 #article2{
     grid-area: article2;
-    /*background-image: url("../../public/IMG/S/The\ benefits\ of\ using\ technology\ in\ sport.png");
-    background-size: cover;*/
-    background-color: #3a66ff;
+    background-image: url("../../public/IMG/A/a-artandtech.jpg");
+    background-size: cover;
 }
 
 #article3{
     grid-area: article3;
-    background-image: url("../../public/IMG/F/Cartier\ and\ Tiffany\ are\ getting\ into\ Snapchat\ AR\ to\ sell\ luxury\ to\ Gen\ Z.jpeg.png");
+    background-image: url("../../public/IMG/M/m-musicandtech.jpg");
     background-size: cover;
 }
 
 #article4{
     grid-area: article4;
-    background-image: url("../../public/IMG/M/2023\ The\ Rise\ of\ Artificial\ Intelligence\ In\ Music.png");
+    background-image: url("../../public/IMG/F/f-design.jpg");
     background-size: cover;
 }
 
 #article5{
     grid-area: article5;
-    background-image: url("../../public/IMG/F/Fashion\ collaborations\ embracing\ technology\ in\ 2023.\ P.png");
+    background-image: url("../../public/IMG/M/m-tiktok.jpg");
     background-size: cover;
 }
 
 #article6{
     grid-area: article6;
-    background-image: url("../../public/IMG/A/Technology\ and\ Art\ in\ 2023\ New\ Opportunities\ for\ Creativity.png");
+    background-image: url("../../public/IMG/M/m-socialmediaposts.jpg");
     background-size: cover;
 }
 
 #article7{
     grid-area: article7;
-    background-image: url("../../public/IMG/S/The\ key\ trends\ shaping\ global\ sport\ ahead\ of\ 2023.png");
+    background-image: url("../../public/IMG/S/s-sportsandai.jpg");
     background-size: cover;
 }
 
 #article8{
     grid-area: article8;
-    background-image: url("../../public/IMG/M/key\ insights\ from\ tiktok.png");
+    background-image: url("../../public/IMG/S/s-sportsindustrytech.jpg");
     background-size: cover;
 }
 
 #article9{
     grid-area: article9;
-    background-image: url("../../public/IMG/M/The\ Best\ Times\ to\ Post\ on\ Social\ Media\ For\ Musicians\ in\ 2023.png");
+    background-image: url("../../public/IMG/F/f-collabshighendbrands.jpg");
     background-size: cover;
 }
 
 #article10{
     grid-area: article10;
-    background-image: url("../../public/IMG/F/The\ Future\ of\ Fashion\ How\ tech\ is\ reshaping\ the\ industry.png");
+    background-image: url("../../public/IMG/F/f-cartiertiffsnap.jpeg.jpeg");
     background-size: cover;
 }

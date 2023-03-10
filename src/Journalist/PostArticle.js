@@ -1,4 +1,5 @@
 import axios from "axios";
+import "./PostArticle.css"
 
 function PostArticle(){
 
@@ -21,7 +22,6 @@ function PostArticle(){
         axios.post("http://127.0.0.1:8000/api/postarticle", jsonArticle, { headers: { 'Content-Type': 'application/json' } } )
         .then(res => {
             console.log(res)
-
          
         }
 
@@ -32,18 +32,18 @@ function PostArticle(){
     return(
         <div className="postArticle">
             <form onSubmit={handlePost}>
+                <h1>Write your scoop!</h1>
                 <input type="text" name="title" placeholder="Title"></input>
-                <input type="text" name="content" placeholder="Content"></input>
+                <textarea type="text" name="content" placeholder="Content"></textarea>
                 <input type="text" name="thumbnailURL" placeholder="Thumbnail Link"></input>
-                
-                <label htmlFor="mediaType">Media Type :</label>
-                    Image
+                <div>
+                    <p>Image</p>
                     <input type="radio" name="mediaType" value="image"></input>
-                    Audio
+                    <p>Audio</p>
                     <input type="radio" name="mediaType" value="audio"></input>
-                    Video
+                    <p>Video</p>
                     <input type="radio" name="mediaType" value="video"></input>
-              
+                </div>
                 <input type="text" name="mediaURL" placeholder="Media Link"></input>
                 <input type="text" name="leadStory" placeholder="Lead Story"></input>
                 <input type="submit"  value="Post"></input>

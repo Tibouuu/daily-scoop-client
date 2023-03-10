@@ -1,0 +1,48 @@
+.postArticle{
+    padding-top: 5em;
+}
+
+.postArticle form{
+    display: flex;
+    color: white;
+    text-align: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.postArticle input, textarea{
+    height: 30px;
+    width: 70%;
+    margin: 0 auto;
+    font-size: medium;
+    margin-bottom: 1em;
+    border: 5px solid #febd12;
+    border-radius: 40px;
+    text-align: center;
+    font-family: Poppins;
+}
+
+.postArticle input[type=radio]{
+    margin-bottom: 0;
+    margin: 0.3em;
+}
+
+.postArticle input[type=submit]{
+    margin-top: 3em;
+    cursor: pointer;
+    padding-top: -1em;
+    background-color: #febd12;
+    color: white;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.postArticle div{
+    display: flex;
+    align-items: center;
+}
+
+textarea{
+    height: 100px;
+    max-width: 70%;
+}
