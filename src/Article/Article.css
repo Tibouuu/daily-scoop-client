@@ -19,8 +19,10 @@
 
 
 .shown-page{
+    display: block;
     position: relative;
     opacity: 100%;
+    top:0;
     transition: 1s ease;
     
    
@@ -28,23 +30,28 @@
 
 .next-page{
     position:relative;
-    bottom:0;
+    bottom:1000px;
     opacity: 0%;
-    height: 0px;
+    height: 0;
     transition: 1s ease;
+    z-index: -5;
+    overflow: hidden;
     
     
 }
 
 .previous-page{
     position:relative;
-    top:-100px;
+    top:-1000px;
     height: 0;
     opacity: 0%;
     transition: 1s ease;
+    z-index: -5;
+
    
     
 }
+
 
 .img-container{
     width:fit-content;
@@ -76,7 +83,7 @@
 
 }
 
-.article-content, .article-content-prev, .article-content-next{
+.article-content{
     width:80%;
     position: relative;
 }
@@ -104,24 +111,16 @@
     cursor: pointer;
 }
 
-.article-content-prev, .article-content-next{
-    opacity:0%;
-    top:0;
-    width: 0;
-    overflow: hidden;
-}
-
-.article-content-prev{
-    left:0;
-
-}
-
-.article-content-next{
-    right:0;
-}
 
 .button-next,.button-prev{
     position:fixed;
     top:50%;
     z-index: 50;
+}
+
+.like{
+    position: absolute;
+    right:0;
+    margin-right:1rem;
+    margin-top:0.5rem;
 }

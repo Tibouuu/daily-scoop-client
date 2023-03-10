@@ -33,7 +33,14 @@ function App() {
   }
 
   function logout() {
-    
+
+    axios.post("http://http://127.0.0.1:8000/api/logout", {
+      headers: {
+        "Authorization": localStorage.getItem('token')
+      }
+    })
+
+
     localStorage.setItem('token','0')
     localStorage.setItem('level','0')
     window.location.href = "/";
