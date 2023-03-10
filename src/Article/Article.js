@@ -169,8 +169,7 @@ function Article(props) {
         <p className="extract">{article.sumary}</p>
         <div className="bottom-line">
           <p className="author">{article.author}</p>
-          <p className="date">Posted at {article.created_at}</p>
-          <p className="date">updated at at {article.updated_at}</p>
+         
         </div>
         <img
           id="down1"
