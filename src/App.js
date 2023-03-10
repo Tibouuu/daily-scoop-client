@@ -50,12 +50,12 @@ function App() {
     <div className="App">
       <div id="mySidenav" className="sidenav">
         <a id="closeBtn" onClick={closeNav} className="close">×</a>
-        <div className='top-menu'><Link onClick={closeNav} to="/">Home</Link><Link onClick={closeNav} to="/Archive">Search</Link></div>
+        <div className='top-menu'><Link onClick={closeNav} to="/">Home</Link><Link onClick={closeNav} to="/Archive">Search</Link><Link onClick={closeNav} to="/postarticle">Write</Link></div>
         <ul>
           <li><img src="icons/TDS_LOGO+ICONS-11.png"/><a>Sport</a></li>
           <li><img src="icons/TDS_LOGO+ICONS-13.png"/><a>Art</a></li>
           <li><img src="icons/TDS_LOGO+ICONS-14.png"/><a>Music</a></li>
-          <li><img src="icons/TDS_LOGO+ICONS-12.png"/><Link to="/Fashion">Fashion</Link></li>
+          <li><img src="icons/TDS_LOGO+ICONS-12.png"/><Link onClick={closeNav} to="/Fashion">Fashion</Link></li>
         </ul>
         <div className='profile'>
           {localStorage.getItem('token') !== '0' ? <div onClick={logout}><p>Hi, {localStorage.getItem('name')}</p><p>Logout</p></div> :   

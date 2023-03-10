@@ -51,7 +51,6 @@ body{
 .top-menu{
   padding-top: 15px;
   margin: 0.5em;
-  display: flex;
 }
 
 .top-menu a{
