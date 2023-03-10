@@ -129,7 +129,7 @@ function Article(props) {
   console.log(props.current);
   return (
     <>
-      <img class="like" src="/icons/heart-regular-24.png" />
+      <img className="like" src="/icons/heart-regular-24.png" />
       <div className="article-content">
         <div className={setImgState(page)} id="illustration">
           {article.mediaURL ? (
