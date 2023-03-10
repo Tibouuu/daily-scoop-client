@@ -53,6 +53,7 @@ function App() {
         <div className='top-menu'>
           <Link onClick={closeNav} to="/">Home</Link>
           <Link onClick={closeNav} to="/Archive">Search</Link>
+          {localStorage.getItem('level') === 'journalist' ? <Link to="/PostArticle" onClick={closeNav}>Write</Link>  : null }
         </div>
         <ul>
           <li><img src="icons/TDS_LOGO+ICONS-11.png"/><a>Sport</a></li>
@@ -60,6 +61,10 @@ function App() {
           <li><img src="icons/TDS_LOGO+ICONS-14.png"/><a>Music</a></li>
           <li><img src="icons/TDS_LOGO+ICONS-12.png"/><Link onClick={closeNav} to="/Fashion">Fashion</Link></li>
         </ul>
+        <div className='options'>
+          <Link to="/All" onClick={closeNav}><p>All the articles</p></Link>
+          <Link to="/Top" onClick={closeNav}><p>Most liked articles</p></Link>
+        </div>
         <div className='profile'>
           {localStorage.getItem('token') !== '0' ? <div id="greet" onClick={logout}><p>Hi, {localStorage.getItem('name')}</p>
           <p className='logout-btn'>Logout</p>
@@ -67,7 +72,7 @@ function App() {
           <div id="login_reg">
               <Link className='links' to="/Login" onClick={closeNav}>Login</Link> 
               <Link to="/Registration" className='links' onClick={closeNav}>Register</Link> </div>}
-          {localStorage.getItem('level') === 'journalist' ? <Link to="/PostArticle" onClick={closeNav}>Post Article</Link>  : null }
+
         </div>
       </div>
 
