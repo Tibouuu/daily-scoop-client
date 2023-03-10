@@ -6,7 +6,7 @@ function Home() {
     return (
         <div className="Home">
             <div className="grid">
-                <Link id="article1" to="/Article"></Link>
+                <Link id="article1" to="/Article/3"></Link>
                 <Link id="article2" to="/Article"></Link>
                 <Link id="article3" to="/Article"></Link>
                 <Link id="article4" to="/Article"></Link>

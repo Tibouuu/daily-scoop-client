@@ -125,7 +125,7 @@
 
 
 .button-next,.button-prev{
-    position:fixed;
+    
     top:50%;
     z-index: 50;
     background:none;
