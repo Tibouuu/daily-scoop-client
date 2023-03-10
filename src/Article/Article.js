@@ -9,6 +9,21 @@ function Article(props) {
   const [page, setPage] = useState(1);
   const [nbLikes, setnbLikes] = useState(null);
   const [comments, setComments] = useState(null);
+  const [bliked, setHasliked] = useState(false);
+
+
+
+  async function hasliked(){
+    const liked = (await axios.get('http://127.0.0.1:8000/api/hasliked/'+article.id))
+    console.log("sdasdsadsaasda"+liked)
+  }
+
+  useEffect(() => {
+    hasliked()
+  }, [props.article])
+
+
+
   console.log(article);
 
   
@@ -269,7 +284,7 @@ function Article(props) {
             src="/icons/chevrons-up-regular-24.png"
           />
           <p>comments</p>
-          {localStorage.getItem("token") ? (
+          {localStorage.getItem("token") !==null ? (
             <form onSubmit={handleCommentSubmit} className="comment-form">
               <input type="text" id="comment" placeholder="Add a comment" />
               <button>Send</button>
@@ -277,6 +292,15 @@ function Article(props) {
           ) : (
             <div className="login-req"> Please log in to comment</div>
           )}
+
+          
+          {comments.map((comment) => (
+            <div className="comment-container">
+              <div className="comment-author">{comment.name}</div>
+              <div className="comment-content">{comment.comment_text}</div>
+              </div>
+          ))}
+
         </div>
       </div>
     </>
