@@ -50,6 +50,7 @@ function Register(){
                 <input type="text" name="email" placeholder="Email"></input>
                 <input type="password" name="pwd" placeholder="Password"></input>
                 <input type="submit" value="Become a scooper"></input>
+                <p>You are already a scooper?<a href="/Login"><strong> Click here</strong></a>!</p>
             </form>
         </div>
     )
