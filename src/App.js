@@ -58,7 +58,7 @@ function App() {
           <li><img src="icons/TDS_LOGO+ICONS-11.png"/><a>Sport</a></li>
           <li><img src="icons/TDS_LOGO+ICONS-13.png"/><a>Art</a></li>
           <li><img src="icons/TDS_LOGO+ICONS-14.png"/><a>Music</a></li>
-          <li><img src="icons/TDS_LOGO+ICONS-12.png"/><Link to="/Fashion">Fashion</Link></li>
+          <li><img src="icons/TDS_LOGO+ICONS-12.png"/><Link onClick={closeNav} to="/Fashion">Fashion</Link></li>
         </ul>
         <div className='profile'>
           {localStorage.getItem('token') !== '0' ? <div id="greet" onClick={logout}><p>Hi, {localStorage.getItem('name')}</p>
