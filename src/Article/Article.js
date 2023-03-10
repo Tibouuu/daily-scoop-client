@@ -209,7 +209,7 @@ function Article(props) {
               <button>Send</button>
             </form>
           ) : (
-            <div class="login-req"> Please log in to comment</div>
+            <div className="login-req"> Please log in to comment</div>
           )}
         </div>
       </div>
