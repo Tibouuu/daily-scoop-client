@@ -4,28 +4,30 @@ function PostArticle(){
 
     const handlePost = (e) =>{
         e.preventDefault();
-        const { title, content , thumbnailURL,mediaType,mediaURL,leadStory } = e.target;
+        const { title, content , thumbnailURL,mediaType,mediaURL } = e.target;
         const article = {
             title: title.value,
             content: content.value,
             thumbnailURL: thumbnailURL.value,
             mediaType: mediaType.value,
             mediaURL: mediaURL.value,
-            leadStory: leadStory.value
+            leadStory:false
 
         }
 
         //change user to json 
+
+        if(localStorage.getItem("token") != null){
         const jsonArticle = JSON.stringify(article);
         console.log(jsonArticle)
         axios.post("http://127.0.0.1:8000/api/postarticle", jsonArticle, { headers: { 'Content-Type': 'application/json' } } )
         .then(res => {
             console.log(res)
-
+        })
          
         }
 
-        )
+        
 
     }
 
@@ -45,7 +47,7 @@ function PostArticle(){
                     <input type="radio" name="mediaType" value="video"></input>
               
                 <input type="text" name="mediaURL" placeholder="Media Link"></input>
-                <input type="text" name="leadStory" placeholder="Lead Story"></input>
+                
                 <input type="submit"  value="Post"></input>
             </form>
         </div>

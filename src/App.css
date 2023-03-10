@@ -25,7 +25,21 @@ body{
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
+
+#greet{
+  position: absolute;
+  font-size: 2em;
+  top: 80%;
+  width: 100%;
+}
+
+.logout-btn{
+  
+  right:0%;  
+}
+
 .sidenav {
+  height: 100%;
   width: 100%;
   position: fixed;
   z-index: 6;
@@ -36,6 +50,17 @@ body{
 }
 
 /* Sidenav menu links */
+
+#login_reg{
+  display: flex;
+  position: absolute;
+  justify-content: space-between;
+  width: 100%;
+  font-size: larger;
+  top:90%;
+  left: 40px;
+}
+
 .sidenav a {
   text-decoration: none;
   font-size: 25px;
@@ -49,25 +74,31 @@ body{
 }
 
 .top-menu{
-  padding-top: 15px;
+  padding-top: 40px;
   margin: 0.5em;
   display: flex;
 }
 
 .top-menu a{
-  font-size: medium;
+  margin: 0 auto;
+  cursor: pointer;
+  font-size: 1.5em;
   text-align: left;
   padding: 0;
 }
 
 
 .sidenav ul {
+  position: absolute;
+  top: 25%;
+  left: 20%;
   list-style-type: none;
   padding: 0;
   margin: 2em;
 }
 
 .sidenav ul li{
+  font-size: 5em;
   display: flex;
   align-items: center;
 }
