@@ -58,7 +58,7 @@ function App() {
           <li><img src="icons/TDS_LOGO+ICONS-11.png"/><a>Sport</a></li>
           <li><img src="icons/TDS_LOGO+ICONS-13.png"/><a>Art</a></li>
           <li><img src="icons/TDS_LOGO+ICONS-14.png"/><a>Music</a></li>
-          <li><img src="icons/TDS_LOGO+ICONS-12.png"/><a>Fashion</a></li>
+          <li><img src="icons/TDS_LOGO+ICONS-12.png"/><Link to="/Fashion">Fashion</Link></li>
         </ul>
         <div className='profile'>
           {localStorage.getItem('token') !== '0' ? <div id="greet" onClick={logout}><p>Hi, {localStorage.getItem('name')}</p>
@@ -82,11 +82,12 @@ function App() {
       <Routes>
         <Route exact={true} path="/" element={<Home />} />
         <Route exact={true} path="/Article/:id" element={<One />} />
-        <Route exact={true} path="/All" element={<All />} />
+        <Route exact={true} path="/All" element={<All categorie=""/>} />
+        <Route exact={true} path="/Fashion" element={<All categorie="3" />} />
         <Route exact={true} path="/Top" element={<Top />} />
         <Route exact={true} path="/Login" element={<Login />} />
         <Route exact={true} path="/Registration" element={<Register />} />
-        <Route exact={true} path="/Archive" element={<Archive/>} />
+        <Route exact={true} path="/Archive" element={<Archive />} />
         <Route exact={true} path="/PostArticle" element={<PostArticle />} />
         <Route path="*" element={<h1>404: Not Found</h1>} />
         
