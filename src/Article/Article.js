@@ -8,19 +8,36 @@ function Article(props) {
   const article = props.article;
   const [page, setPage] = useState(1);
   const [nbLikes, setnbLikes] = useState(null);
+  const [comments, setComments] = useState(null);
   console.log(article);
 
   
   async function likes() {
-    const nb = (await axios.get('http://localhost:8000/api/countarticlelikes/'+article.id))
+    const nb = (await axios.get('http://127.0.0.1:8000/api/countarticlelikes/'+article.id))
     setnbLikes(nb)
+    
+
     console.log(nbLikes)
   }
+
+  async function getComments() {
+    const comments = (await axios.get('http://localhost:8000/api/comments/'+article.id))
+    setComments(comments)
+    console.log(comments)
+  }
+
+  useEffect(() => {
+    getComments()
+  }, [props.article])
+
 
   useEffect(() => { // this is a hook called everytime the function is rendered again
     // Don't forget to import useEffect
   (likes())
 }, [props.article]);
+
+    console.log(nbLikes)
+    console.log(comments)
 
   function handleCommentSubmit(e) {
     e.preventDefault();
@@ -163,12 +180,20 @@ function Article(props) {
 
       console.log(likes())
 
+
+      axios.get("http://127.0.0.1:8000/api/comments/"+article.id).then
+      ((res) => {
+        console.log(res);
+      }
+      )
+
+
   }
 
   console.log(props.current);
   return (
     <>
-      <img className="like" src="/icons/heart-regular-24.png" />
+      <img className="like" onClick={handleLike} src="/icons/heart-regular-24.png" />
       {props.current != undefined ? (
           <button
           className="button-prev"
