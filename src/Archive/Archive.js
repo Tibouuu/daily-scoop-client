@@ -31,7 +31,7 @@ function Archive(){
     return(
         <div className="archive">
             <input name="filtre" type="text" placeholder="What would you read?" value={filter} onChange={handleFilterChange} />
-            {filtered.map(x => <Link key={x.id} to={"/Article/:id"}><ArticleItem key={x.id} {...x}/></Link>)}
+            {filtered.map(x => <Link key={x.id} to={"/Article/"+x.id}><ArticleItem key={x.id} {...x}/></Link>)}
         </div>
     )
 }
