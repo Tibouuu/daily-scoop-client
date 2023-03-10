@@ -7,7 +7,21 @@ import { func } from "prop-types";
 function Article(props) {
   const article = props.article;
   const [page, setPage] = useState(1);
+  const [nbLikes, setnbLikes] = useState(null);
   console.log(article);
+
+  
+  async function likes() {
+    const nb = (await axios.get('http://localhost:8000/api/countarticlelikes/'+article.id))
+    setnbLikes(nb)
+    console.log(nbLikes)
+  }
+
+  useEffect(() => { // this is a hook called everytime the function is rendered again
+    // Don't forget to import useEffect
+  (likes())
+}, [props.article]);
+
   function handleCommentSubmit(e) {
     e.preventDefault();
     const comment = {
@@ -18,18 +32,18 @@ function Article(props) {
     console.log(comment);
 
     let json = JSON.stringify(comment);
+
+
+    const config = {
+      headers:{
+        Authorization : token
+      }
+    };
+    console.log(config)
     axios
       .post(
-        "http://127.0.0.1:8000/api/comment/" +
-          article.id +
-          "/" +
-          comment.comment_text,
-        {
-          headers: {
-            Authorization: token,
-            accept :'application/json',
-          },         
-        }
+        "http://127.0.0.1:8000/api/comment/" +article.id +"/" +comment.comment_text,json,
+      config
       )
       .then((res) => {
         console.log(res);
@@ -127,10 +141,35 @@ function Article(props) {
     }
   }
 
+  function handleLike(){
+
+
+    let json = JSON.stringify(article);
+
+    const config = {
+      headers:{
+        Authorization : localStorage.getItem("token")
+      }
+    };
+    console.log(config)
+    axios
+      .get(
+        "http://127.0.0.1:8000/api/like/" +article.id,
+      config
+      )
+      .then((res) => {
+        console.log(res);
+      });
+
+      console.log(likes())
+
+  }
+
   console.log(props.current);
   return (
     <>
-      <img className="like" src="/icons/heart-regular-24.png" />
+      <img className="like" onClick={handleLike} src="/icons/heart-regular-24.png" />
+      <div className="likes"></div>
       <div className="article-content">
         <div className={setImgState(page)} id="illustration">
           {article.mediaURL ? (
