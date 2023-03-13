@@ -294,13 +294,6 @@ function Article(props) {
             <div className="login-req"> Please log in to comment</div>
           )}
 
-          
-          {comments.map((comment) => (
-            <div className="comment-container">
-              <div className="comment-author">{comment.name}</div>
-              <div className="comment-content">{comment.comment_text}</div>
-              </div>
-          ))}
 
         </div>
       </div>
