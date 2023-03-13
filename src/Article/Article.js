@@ -9,21 +9,6 @@ function Article(props) {
   const [page, setPage] = useState(1);
   const [nbLikes, setnbLikes] = useState(null);
   const [comments, setComments] = useState(null);
-  const [bliked, setHasliked] = useState(false);
-
-
-
-  async function hasliked(){
-    const liked = (await axios.get('http://127.0.0.1:8000/api/hasliked/'+article.id))
-    console.log("sdasdsadsaasda"+liked)
-  }
-
-  useEffect(() => {
-    hasliked()
-  }, [props.article])
-
-
-
   console.log(article);
 
   
@@ -38,7 +23,7 @@ function Article(props) {
   async function getComments() {
     const comments = (await axios.get('http://localhost:8000/api/comments/'+article.id))
     setComments(comments)
-    console.log(comments)
+    
   }
 
   useEffect(() => {
@@ -247,8 +232,7 @@ function Article(props) {
         <p className="extract">{article.sumary}</p>
         <div className="bottom-line">
           <p className="author">{article.author}</p>
-          <p className="date">Posted at {article.created_at}</p>
-          <p className="date">updated at at {article.updated_at}</p>
+         
         </div>
         <img
           id="down1"
@@ -285,7 +269,7 @@ function Article(props) {
             src="/icons/chevrons-up-regular-24.png"
           />
           <p>comments</p>
-          {localStorage.getItem("token") !==null ? (
+          {localStorage.getItem("token") ? (
             <form onSubmit={handleCommentSubmit} className="comment-form">
               <input type="text" id="comment" placeholder="Add a comment" />
               <button>Send</button>

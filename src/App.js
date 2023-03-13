@@ -56,7 +56,7 @@ function App() {
           {localStorage.getItem('level') === 'journalist' ? <Link to="/PostArticle" onClick={closeNav}>Write</Link>  : null }
         </div>
         <ul>
-          <li><img src="icons/TDS_LOGO+ICONS-11.png"/><Link onClick={closeNav} to="/Sport">Sport</Link></li>
+          <li><img src="icons/TDS_LOGO+ICONS-11.png"/><Link onClick={closeNav} to="/Sports">Sport</Link></li>
           <li><img src="icons/TDS_LOGO+ICONS-13.png"/><Link onClick={closeNav} to="/Art">Art</Link></li>
           <li><img src="icons/TDS_LOGO+ICONS-14.png"/><Link onClick={closeNav} to="/Music">Music</Link></li>
           <li><img src="icons/TDS_LOGO+ICONS-12.png"/><Link onClick={closeNav} to="/Fashion">Fashion</Link></li>

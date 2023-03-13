@@ -43,6 +43,7 @@ function Login() {
                 <input type="text" name="name" placeholder="Email"></input>
                 <input type="password" name="pwd" placeholder="Password"></input>
                 <input type="submit" value="Go scooping!"></input>
+                <p>You want to become a scooper? <a href="/Registration"><strong>Click here</strong></a>!</p>
             </form>
         </div>
     )
